@@ -20,8 +20,11 @@
                             alt="Mastering meter">
                     </div>
                     <div class="title-container">
-                        <h1>Luke Fair <span class="sr-only">audio engineer / mix / master</span></h1>
+                        <h1 class="sr-only">Luke Fair: audio engineer, mix, master.</h1>
                         <h2 class="sr-only">audio engineer / mix / master</h2>
+                        <img class="subtitle-image"
+                            src="<?php echo esc_url(get_theme_file_uri('/images/title.svg'))?>"
+                            alt="Luke Fair" aria-hidden="true">
                         <img class="subtitle-image"
                             src="<?php echo esc_url(get_theme_file_uri('/images/subtitle.svg'))?>"
                             alt="audio engineer / mix / master" aria-hidden="true">

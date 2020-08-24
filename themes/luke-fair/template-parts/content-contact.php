@@ -6,8 +6,8 @@
             <p>Audio Engineer based near Toronto, Ontario.</p>
             <a class="email-link" href="mailto:luke.r.fair@gmail.com" target="_blank" rel="noopener noreferrer">luke.r.fair@gmail.com</a>
             </div>
+            <img src="<?php echo get_template_directory_uri(). '/images/portrait.png'; ?>">
         </div>
-        <img src="<?php echo get_template_directory_uri(). '/images/portrait.png'; ?>">
     </div>
     <div class="contact-form">
         <div class="wrapper">

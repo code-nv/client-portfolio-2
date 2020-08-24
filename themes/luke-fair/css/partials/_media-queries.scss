@@ -1,21 +1,14 @@
 @media (max-width: 830px) {
-	.header-image-container {
-		width: 40%;
-	}
-	h1 {
-		font-size: calc(2rem + 3vw);
-	}
-	.title-container {
-		flex-shrink: 1;
-	}
-
 	.section-about {
 		font-size: calc(0.2rem + 2.3vw);
-		// font-size: 1.5rem;
 		.bio-container {
 			.about-link {
 				border: 2px solid #ec3b3b;
 				padding: 0 15px;
+			}
+			em,
+			strong {
+				font-size: calc(0.9rem + 2.3vw);
 			}
 		}
 		.testimonial-container .wrapper {
@@ -31,7 +24,6 @@
 		}
 		img {
 			width: 40px;
-			transform: translateY(15px);
 		}
 	}
 }
@@ -59,34 +51,37 @@
 		display: none;
 	}
 	header {
-		margin: 0 auto;
+		margin: 0;
 		animation: email-load 3s ease;
+		// height: 50vh;
 		.wrapper {
-			@include flex(column-reverse);
-			width: auto;
+			// @include flex(column-reverse);
+			width: calc(100vw - 20px);
+			max-width: initial;
+			margin: 0;
 		}
-		.header-image-container {
-			width: 100%;
-		}
-
+		.header-image-container,
 		.title-container {
-			width: auto;
-			text-align: center;
-			font-size: calc(4rem + 1vw);
-			letter-spacing: 2px;
-			line-height: 0;
-			margin: 40px 0;
+			width: 50%
+			// margin: 10px auto;
 		}
 	}
 	.fixed-email {
 		animation: email-load 3s ease forwards;
-		bottom: 10px;
+		bottom: 30px;
+		right: 30px;
 	}
 
 	.section-about {
 		font-size: calc(0.5rem + 2.3vw);
 		.wrapper {
 			width: 90%;
+		}
+		.bio-container {
+			em,
+			strong {
+				font-size: calc(1.2rem + 2.3vw);
+			}
 		}
 		.testimonial-container {
 			position: relative;
@@ -139,9 +134,31 @@
 }
 
 @media (max-width: 474px) {
+
+	header {
+		.wrapper {
+			@include flex(column-reverse, center);
+		}
+		.header-image-container,
+		.title-container {
+			width: 80%;
+			margin: 10px auto;
+		}
+		.subtitle-image {
+			margin-top: 20px;
+		}
+	}
+
 	.section-about {
 		font-size: calc(1rem + 2vw);
 		line-height: 1.5;
+
+		.bio-container {
+			em,
+			strong {
+				font-size: calc(1.2rem + 3vw);
+			}
+		}
 	}
 	.section-about .testimonial p::before {
 		top: calc(-12px + 1vw);

@@ -304,7 +304,7 @@ main {
 
 .wrapper {
   width: 90vw;
-  max-width: 1400px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -340,7 +340,8 @@ main {
 header {
   height: 100vh;
   background: #f7eee9;
-  margin-left: 17vw;
+  width: 66vw;
+  margin: 0 auto;
   -webkit-animation: header-load 3s ease;
           animation: header-load 3s ease;
 }
@@ -361,9 +362,10 @@ header .wrapper {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 100vh;
-  width: 80vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
+  max-width: initial;
 }
 
 @-webkit-keyframes header-load {
@@ -385,9 +387,12 @@ header .wrapper {
 }
 
 .title-container {
-  margin-left: 25px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  margin-left: 12.5px;
+  width: calc(50% - 12.5px);
+}
+
+.subtitle-image {
+  margin-top: 5px;
 }
 
 .header-image {
@@ -399,7 +404,8 @@ header .wrapper {
   position: relative;
   -ms-flex-negative: 1;
       flex-shrink: 1;
-  width: 35%;
+  width: calc(50% - 12.5px);
+  margin-right: 12.5px;
 }
 
 .header-image-container:before {
@@ -412,15 +418,10 @@ header .wrapper {
   width: 100%;
 }
 
-h1 {
-  font-size: calc(2.2rem + 4vw);
-  line-height: 1;
-}
-
 .fixed-email {
   position: fixed;
-  bottom: 44px;
-  right: 2vw;
+  bottom: 54px;
+  right: 54px;
   height: 55px;
   width: 55px;
   border-radius: 50%;
@@ -859,6 +860,11 @@ aside a:hover {
   line-height: 2;
 }
 
+.section-about em,
+.section-about strong {
+  color: #adf0ce;
+}
+
 .section-about .wrapper {
   width: 90%;
   max-width: 1700px;
@@ -875,11 +881,6 @@ aside a:hover {
   color: #f7eee9;
 }
 
-.section-about .bio-container em {
-  color: #adf0ce;
-  margin: 10px 0;
-}
-
 .section-about .bio-container .about-link {
   border: 4px solid #ec3b3b;
   padding: 0 20px;
@@ -891,6 +892,11 @@ aside a:hover {
 .section-about .bio-container .about-link:hover {
   background: #ec3b3b;
   cursor: pointer;
+}
+
+.section-about .bio-container em,
+.section-about .bio-container strong {
+  font-size: calc(1.2rem + 2vw);
 }
 
 .section-about .testimonial-container {
@@ -915,11 +921,27 @@ aside a:hover {
       flex-wrap: wrap;
 }
 
+.section-about .attribution {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 .section-about img {
   width: 50px;
   margin: 0 10px 0 30px;
-  -webkit-transform: translateY(18px);
-          transform: translateY(18px);
   border-radius: 50px;
   -webkit-box-shadow: 0 0px 4px #858891;
           box-shadow: 0 0px 4px #858891;
@@ -928,6 +950,8 @@ aside a:hover {
 .section-about .said-by {
   font-size: 1.4rem;
   font-size: calc(0.2rem + 2vw);
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 .section-about .testimonial {
@@ -952,7 +976,7 @@ aside a:hover {
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
   text-align: left;
-  padding: 10px 30px;
+  padding: 13px 30px 7px;
   background: #23262e;
   -webkit-box-shadow: 0 0px 8px #858891;
           box-shadow: 0 0px 8px #858891;
@@ -968,10 +992,6 @@ aside a:hover {
   border-style: solid;
   border-width: 25px 0 0 70px;
   border-color: transparent transparent transparent #23262e;
-}
-
-.section-about .testimonial strong {
-  color: #adf0ce;
 }
 
 .section-work {
@@ -1007,7 +1027,7 @@ aside a:hover {
 .section-work .work-link {
   background: #ec3b3b;
   color: #f7eee9;
-  padding: 10px 15px;
+  padding: 12px 15px 8px;
   margin: 25px 0;
   text-transform: uppercase;
   text-align: center;
@@ -1138,14 +1158,17 @@ aside a:hover {
   position: relative;
   background: #23262e;
   color: #f7eee9;
-  padding: 100px 0;
+  padding: 0;
   -webkit-box-shadow: 0 0px 10px #858891;
           box-shadow: 0 0px 10px #858891;
   font-size: 2rem;
 }
 
 .section-contact .contact-card .wrapper {
-  width: 55%;
+  padding: 100px 0 100px 5%;
+  width: 70%;
+  height: 100%;
+  position: relative;
 }
 
 .section-contact .contact-card h3 {
@@ -1167,11 +1190,13 @@ aside a:hover {
   color: #adf0ce;
   position: relative;
   z-index: 2;
+  margin-left: 10px;
 }
 
 .section-contact .contact-card .email-link {
   display: inline-block;
   line-height: 1.5;
+  margin-left: 0;
 }
 
 .section-contact .contact-card .email-link:before {
@@ -1326,22 +1351,16 @@ footer {
 }
 
 @media (max-width: 830px) {
-  .header-image-container {
-    width: 40%;
-  }
-  h1 {
-    font-size: calc(2rem + 3vw);
-  }
-  .title-container {
-    -ms-flex-negative: 1;
-        flex-shrink: 1;
-  }
   .section-about {
     font-size: calc(0.2rem + 2.3vw);
   }
   .section-about .bio-container .about-link {
     border: 2px solid #ec3b3b;
     padding: 0 15px;
+  }
+  .section-about .bio-container em,
+  .section-about .bio-container strong {
+    font-size: calc(0.9rem + 2.3vw);
   }
   .section-about .testimonial-container .wrapper {
     -webkit-box-pack: justify;
@@ -1358,8 +1377,6 @@ footer {
   }
   .section-about img {
     width: 40px;
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px);
   }
 }
 
@@ -1385,49 +1402,34 @@ footer {
     display: none;
   }
   header {
-    margin: 0 auto;
+    margin: 0;
     -webkit-animation: email-load 3s ease;
             animation: email-load 3s ease;
   }
   header .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    width: auto;
+    width: calc(100vw - 20px);
+    max-width: initial;
+    margin: 0;
   }
-  header .header-image-container {
-    width: 100%;
-  }
+  header .header-image-container,
   header .title-container {
-    width: auto;
-    text-align: center;
-    font-size: calc(4rem + 1vw);
-    letter-spacing: 2px;
-    line-height: 0;
-    margin: 40px 0;
+    width: 50%;
   }
   .fixed-email {
     -webkit-animation: email-load 3s ease forwards;
             animation: email-load 3s ease forwards;
-    bottom: 10px;
+    bottom: 30px;
+    right: 30px;
   }
   .section-about {
     font-size: calc(0.5rem + 2.3vw);
   }
   .section-about .wrapper {
     width: 90%;
+  }
+  .section-about .bio-container em,
+  .section-about .bio-container strong {
+    font-size: calc(1.2rem + 2.3vw);
   }
   .section-about .testimonial-container {
     position: relative;
@@ -1485,9 +1487,38 @@ footer {
 }
 
 @media (max-width: 474px) {
+  header .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  header .header-image-container,
+  header .title-container {
+    width: 80%;
+    margin: 10px auto;
+  }
+  header .subtitle-image {
+    margin-top: 20px;
+  }
   .section-about {
     font-size: calc(1rem + 2vw);
     line-height: 1.5;
+  }
+  .section-about .bio-container em,
+  .section-about .bio-container strong {
+    font-size: calc(1.2rem + 3vw);
   }
   .section-about .testimonial p::before {
     top: calc(-12px + 1vw);
