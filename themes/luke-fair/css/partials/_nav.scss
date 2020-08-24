@@ -116,7 +116,9 @@ aside {
 	&.light span {
 		background: $secondary;
 	}
-	&:focus {outline-color: $primary;}
+	&:focus {
+		outline-color: $primary;
+	}
 }
 
 .hamburger-nav.show {
@@ -156,7 +158,9 @@ aside {
 		span {
 			font-weight: normal;
 		}
-		&:focus {outline-color: $accent;}
+		&:focus {
+			outline-color: $accent;
+		}
 	}
 	.hamburger-close {
 		display: inline-block;
@@ -200,13 +204,13 @@ aside {
 		font-weight: 300;
 		&:hover {
 			cursor: pointer;
-			&:before {
-				content: "\00bb";
-				position: absolute;
-				left: -18px;
-				top: -3px;
-				font-size: 1.8rem;
-			}
+		}
+		&:not(.home-hamburger-link):hover:before {
+			content: "\00bb";
+			position: absolute;
+			left: -18px;
+			top: -3px;
+			font-size: 1.8rem;
 		}
 	}
 }

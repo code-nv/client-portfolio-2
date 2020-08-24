@@ -805,7 +805,7 @@ aside a:hover {
   cursor: pointer;
 }
 
-.hamburger-nav a:hover:before {
+.hamburger-nav a:not(.home-hamburger-link):hover:before {
   content: "\00bb";
   position: absolute;
   left: -18px;
@@ -1073,7 +1073,7 @@ aside a:hover {
   transition: opacity 0.6s ease-out, transform 1.2s ease-out;
   transition: opacity 0.6s ease-out, transform 1.2s ease-out, -webkit-transform 1.2s ease-out;
   z-index: 1;
-  margin: 1vw 1.5vw;
+  margin: calc(1vw + 5px) 1.5vw;
   width: calc(25% - 3vw);
   max-width: 300px;
 }
@@ -1082,13 +1082,62 @@ aside a:hover {
   opacity: 1;
   -webkit-transform: none;
           transform: none;
+  position: relative;
 }
 
 .work-grid .project-container a {
   color: #23262e;
 }
 
+.work-grid .project-container a.no-link .link-icon {
+  display: none;
+}
+
+.work-grid .project-container a .link-icon {
+  position: absolute;
+  opacity: 0;
+  top: 7px;
+  right: 7px;
+  color: #23262e;
+  background: #adf0ce;
+  padding: 2px 2px 3px 3px;
+  line-height: 1;
+  border-radius: 2px;
+  font-size: 1rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.work-grid .project-container:hover a .link-icon {
+  opacity: 1;
+}
+
+.work-grid .project-container a.no-link:after {
+  position: absolute;
+  content: "link coming soon";
+  font-size: 1rem;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: #adf0ce;
+  color: #23262e;
+  opacity: 0;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
 .work-grid .project-container:hover img {
+  -webkit-box-shadow: 0 0px 8px #858891;
+          box-shadow: 0 0px 8px #858891;
+}
+
+.work-grid .project-container:hover .no-link:after {
+  opacity: 1;
+  top: -23.4px;
   -webkit-box-shadow: 0 0px 8px #858891;
           box-shadow: 0 0px 8px #858891;
 }
@@ -1389,7 +1438,7 @@ footer {
 
 @media (max-width: 830px) {
   .work-grid .project-container {
-    margin: 1.5vw;
+    margin: 14px 1.5vw;
     width: calc(50% - 3vw);
   }
   .work-grid .info {

@@ -1,4 +1,3 @@
-// const swal = require('sweetalert2')
 const $ = jQuery;
 app = {};
 app.menu;
@@ -14,7 +13,7 @@ app.init = function () {
 // wordpress doesn't play nicely with anchor points so this is my workaround
 app.scrollFix = () => {
 	const url = window.location.href.split("#");
-	if (url.length == 2) {
+	if (url.length == 2 && url[1] != "") {
 		let target = document.getElementById(url[1]);
 		target.scrollIntoView(true);
 	}
@@ -134,6 +133,7 @@ app.toggleHamburger = () => {
 	};
 
 	$(".hamburger-close").on("click", hamburgerClose);
+	$(".home-hamburger-link").on("click", hamburgerClose);
 	$(".hamburger-nav li").on("click", hamburgerClose);
 	$(".hamburger-dimmer").on("click", hamburgerClose);
 };

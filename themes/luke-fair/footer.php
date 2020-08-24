@@ -7,7 +7,8 @@
             </button>
             <nav class="hamburger-nav">
                 <div class="wrapper">
-                    <h2><span>Luke</span> Fair</h2>
+                    <h2><a class="home-hamburger-link"
+                                href="<?php echo esc_url(site_url('/#'))?>"><span>Luke</span> Fair</a></h2>
                     <button class="hamburger-close"><i class="fas fa-times" aria-hidden="true"></i><span class="sr-only">close menu</span></button>
                     <ul>
                         <li class="about-link-hamburger">

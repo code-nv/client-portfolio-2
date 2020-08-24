@@ -24,7 +24,6 @@
 	em,
 	strong {
 		color: $primary;
-
 	}
 	.wrapper {
 		width: 90%;
@@ -61,7 +60,7 @@
 		}
 	}
 	.attribution {
-		@include flex(row, flex-start,center,nowrap);
+		@include flex(row, flex-start, center, nowrap);
 	}
 	img {
 		width: 50px;
@@ -148,18 +147,58 @@
 		transition: opacity 0.6s ease-out, transform 1.2s ease-out;
 		// end fade in styles
 		z-index: 1;
-		margin: 1vw 1.5vw;
+		margin: calc(1vw + 5px) 1.5vw;
 		width: calc(25% - 3vw);
 		max-width: 300px;
 		&.is-visible {
 			opacity: 1;
 			transform: none;
+			position: relative;
 		}
 		a {
 			color: $black;
 		}
-
+		a.no-link .link-icon {
+			display: none;
+		}
+		a .link-icon {
+			position: absolute;
+			opacity: 0;
+			top: 7px;
+			right: 7px;
+			color: $black;
+			background: $primary;
+			padding: 2px 2px 3px 3px;
+			line-height: 1;
+			border-radius: 2px;
+			font-size: 1rem;
+			transition: all 0.3s;
+		}
+		&:hover a .link-icon {
+			opacity: 1;
+		}
+		a.no-link:after {
+			position: absolute;
+			content: "link coming soon";
+			font-size: 1rem;
+			top: 0;
+			right: 0;
+			width: 100%;
+			background: $primary;
+			color: $black;
+			opacity: 0;
+			padding-top: 5px;
+			text-align: center;
+			border-radius: 5px 5px 0 0;
+			transition: all 0.3s;
+			z-index: -1;
+		}
 		&:hover img {
+			box-shadow: 0 0px 8px #858891;
+		}
+		&:hover .no-link:after {
+			opacity: 1;
+			top: -23.4px;
 			box-shadow: 0 0px 8px #858891;
 		}
 	}

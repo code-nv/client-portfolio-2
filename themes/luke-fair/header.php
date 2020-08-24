@@ -4,9 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- <meta http-equiv="refresh" content="5"> -->
-        <!-- <title>Luke Fair</title> -->
+        <title>Luke Fair</title>
         <?php wp_head(); ?>
     </head>
 
@@ -49,8 +47,7 @@
                     </ul>
                 </nav>
             </aside>
-            <a class="fixed-email"
-                href="<?php echo esc_url(site_url('/#contact-form'))?>">
+            <a class="fixed-email" href="<?php echo esc_url(site_url('/#contact-form'))?>">
                 <img src="<?php echo esc_url(get_theme_file_uri('/images/email.svg'))?>"
                     alt="click to email me directly"></a>
         </section>
