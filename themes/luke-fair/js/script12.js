@@ -30,6 +30,7 @@ app.scrollEvents = () => {
 	let testimonialCard;
 	let contactCard;
 	let formCard;
+	let showAlways = false;
 
 	// images loading changes height of these so they need frequent updates
 	setParamsBelowWork = () => {
@@ -52,9 +53,9 @@ app.scrollEvents = () => {
 	const showHamburger = () => {
 		setParamsBelowWork();
 		scrollHeight = $(window).scrollTop() + 20;
-		if (scrollHeight > vh) {
+		if (scrollHeight > vh || showAlways == true) {
 			menuToggle.addClass("show");
-			if (scrollHeight > formCard) {
+			if (scrollHeight > formCard - 10) {
 				console.log("clear form");
 				menuToggle.removeClass("light");
 			} else if (scrollHeight > contactCard) {
@@ -64,21 +65,33 @@ app.scrollEvents = () => {
 				menuToggle.removeClass("light");
 			} else if (scrollHeight > aboutCard) {
 				menuToggle.addClass("light");
+			} else if (scrollHeight < aboutCard) {
+				menuToggle.removeClass("light");
 			}
 		}
-		if (scrollHeight < vh) {
+		if (scrollHeight < vh && showAlways == false) {
 			menuToggle.removeClass("show");
 		}
 	};
 
 	// giving the page a little time to load the important things
 	setTimeout(() => {
+		if (window.innerWidth <= 620) {
+			showAlways = true;
+		} else {
+			showAlways = false;
+		}
 		showHamburger();
 	}, 201);
 
 	// was running into issues here so I'm only calling this when the user has ended resizing
 	let timer = window.setTimeout(function () {}, 0);
 	$(window).on("resize", function () {
+		if (window.innerWidth <= 620) {
+			showAlways = true;
+		} else {
+			showAlways = false;
+		}
 		window.clearTimeout(timer);
 		timer = window.setTimeout(function () {
 			setParams();
@@ -94,7 +107,7 @@ app.scrollEvents = () => {
 			let positionFromTop = $(targets[i]).offset().top;
 			if (positionFromTop - scrollHeight <= 0 + 0.9 * vh) {
 				targets[i].classList.add("is-visible");
-				if ($(targets[7]).hasClass("is-visible")) {
+				if ($(targets[targets.length-1]).hasClass("is-visible")) {
 					// disable listening
 					$(window).off("scroll", fadeInProjects);
 				}

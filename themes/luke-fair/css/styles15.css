@@ -655,7 +655,7 @@ aside a:hover {
 
 .hamburger-button span {
   border-radius: 2px;
-  width: 100%;
+  width: 30px;
   height: 3px;
   background: #23262e;
   position: relative;
@@ -673,10 +673,10 @@ aside a:hover {
 .hamburger-nav.show {
   -webkit-transform: translateX(0vw);
           transform: translateX(0vw);
-  min-width: 200px;
 }
 
 .hamburger-nav {
+  min-width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -699,11 +699,11 @@ aside a:hover {
   height: 100vh;
   width: 17vw;
   z-index: 10;
-  -webkit-transform: translateX(-20vw);
-          transform: translateX(-20vw);
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
   border-right: 3px solid #23262e;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 .hamburger-nav .wrapper {
@@ -828,8 +828,8 @@ aside a:hover {
   width: 100vw;
   background: #23262e;
   z-index: 9;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 .section {
@@ -1465,6 +1465,9 @@ footer {
   .section-about .testimonial {
     position: relative;
     width: 80%;
+  }
+  .section-about .testimonial:first-of-type {
+    margin-bottom: 70px;
   }
   .section-about .testimonial p {
     margin-top: 10px;
