@@ -24,7 +24,7 @@ while ($testimonials->have_posts()):
                     src="<?php echo get_template_directory_uri(). '/images/testimonial.svg'; ?>">
                 <?php
     echo '<span class="said-by">' . get_field('said_by') . '</span></div>';
-    echo '<p class="test"><span>' . get_the_content() . '</span></p>'; ?>
+    echo '<p><span>' . get_the_content() . '</span></p>'; ?>
             </div>
             <?php
 endwhile ?>
