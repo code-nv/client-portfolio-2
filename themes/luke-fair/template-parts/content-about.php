@@ -19,11 +19,12 @@ $testimonials = new WP_Query(
 while ($testimonials->have_posts()):
     $testimonials->the_post(); ?>
             <div class="testimonial">
+                <div class="attribution">
                 <img
                     src="<?php echo get_template_directory_uri(). '/images/testimonial.svg'; ?>">
                 <?php
-    echo '<span class="said-by">' . get_field('said_by') . '</span>';
-    echo '<p class="test"><span>' . get_the_content() . '</span></p>'; ?>
+    echo '<span class="said-by">' . get_field('said_by') . '</span></div>';
+    echo '<p><span>' . get_the_content() . '</span></p>'; ?>
             </div>
             <?php
 endwhile ?>

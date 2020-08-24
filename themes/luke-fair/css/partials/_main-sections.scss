@@ -21,6 +21,10 @@
 	font-size: 2.4rem;
 	font-size: calc(0.5rem + 2vw);
 	line-height: 2;
+	em,
+	strong {
+		color: $primary;
+	}
 	.wrapper {
 		width: 90%;
 		max-width: 1700px;
@@ -33,10 +37,6 @@
 		box-shadow: 0 0px 10px #858891;
 		text-align: center;
 		color: $white;
-		em {
-			color: $primary;
-			margin: 10px 0;
-		}
 		.about-link {
 			border: 4px solid $accent;
 			padding: 0 20px;
@@ -48,6 +48,10 @@
 				cursor: pointer;
 			}
 		}
+		em,
+		strong {
+			font-size: calc(1.2rem + 2vw);
+		}
 	}
 	.testimonial-container {
 		padding: 70px 0;
@@ -55,16 +59,19 @@
 			@include flex(row, center, flex-start, wrap);
 		}
 	}
+	.attribution {
+		@include flex(row, flex-start, center, nowrap);
+	}
 	img {
 		width: 50px;
 		margin: 0 10px 0 30px;
-		transform: translateY(18px);
 		border-radius: 50px;
 		box-shadow: 0 0px 4px #858891;
 	}
 	.said-by {
 		font-size: 1.4rem;
 		font-size: calc(0.2rem + 2vw);
+		transform: translateY(4px);
 	}
 	.testimonial {
 		font-style: italic;
@@ -82,7 +89,7 @@
 			span {
 				box-decoration-break: clone;
 				text-align: left;
-				padding: 10px 30px;
+				padding: 13px 30px 7px;
 				background: $black;
 				box-shadow: 0 0px 8px #858891;
 				z-index: 1;
@@ -92,15 +99,11 @@
 				content: "";
 				position: absolute;
 				height: 0;
-				// top: -13px;
 				top: calc(-25px + 1vw);
 				border-style: solid;
 				border-width: 25px 0 0 70px;
 				border-color: transparent transparent transparent $black;
 			}
-		}
-		strong {
-			color: $primary;
 		}
 	}
 }
@@ -119,7 +122,7 @@
 	.work-link {
 		background: $accent;
 		color: $white;
-		padding: 10px 15px;
+		padding: 12px 15px 8px;
 		margin: 25px 0;
 		text-transform: uppercase;
 		text-align: center;
@@ -144,18 +147,58 @@
 		transition: opacity 0.6s ease-out, transform 1.2s ease-out;
 		// end fade in styles
 		z-index: 1;
-		margin: 1vw 1.5vw;
+		margin: calc(1vw + 5px) 1.5vw;
 		width: calc(25% - 3vw);
 		max-width: 300px;
 		&.is-visible {
 			opacity: 1;
 			transform: none;
+			position: relative;
 		}
 		a {
 			color: $black;
 		}
-
+		a.no-link .link-icon {
+			display: none;
+		}
+		a .link-icon {
+			position: absolute;
+			opacity: 0;
+			top: 7px;
+			right: 7px;
+			color: $black;
+			background: $primary;
+			padding: 2px 2px 3px 3px;
+			line-height: 1;
+			border-radius: 2px;
+			font-size: 1rem;
+			transition: all 0.3s;
+		}
+		&:hover a .link-icon {
+			opacity: 1;
+		}
+		a.no-link:after {
+			position: absolute;
+			content: "link coming soon";
+			font-size: 1rem;
+			top: 0;
+			right: 0;
+			width: 100%;
+			background: $primary;
+			color: $black;
+			opacity: 0;
+			padding-top: 5px;
+			text-align: center;
+			border-radius: 5px 5px 0 0;
+			transition: all 0.3s;
+			z-index: -1;
+		}
 		&:hover img {
+			box-shadow: 0 0px 8px #858891;
+		}
+		&:hover .no-link:after {
+			opacity: 1;
+			top: -23.4px;
 			box-shadow: 0 0px 8px #858891;
 		}
 	}
@@ -205,11 +248,14 @@
 		position: relative;
 		background: $black;
 		color: $white;
-		padding: 100px 0;
+		padding: 0;
 		box-shadow: 0 0px 10px #858891;
 		font-size: 2rem;
 		.wrapper {
-			width: 55%;
+			padding: 100px 0 100px 5%;
+			width: 80%;
+			height: 100%;
+			position: relative;
 		}
 
 		h3 {
@@ -229,10 +275,12 @@
 			color: $primary;
 			position: relative;
 			z-index: 2;
+			margin-left: 10px;
 		}
 		.email-link {
 			display: inline-block;
 			line-height: 1.5;
+			margin-left: 0;
 			&:before {
 				content: "luke.r.fair@gmail.com \00bb";
 				color: $black;
@@ -260,7 +308,6 @@
 			right: 0;
 			top: 0;
 			height: 100%;
-			// z-index: 1;
 		}
 	}
 }

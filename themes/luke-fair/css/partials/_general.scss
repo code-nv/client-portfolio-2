@@ -43,13 +43,12 @@ a {
 
 main {
 	background: $white;
-	// width: 83vw;
 	margin: 0;
 }
 
 .wrapper {
 	width: 90vw;
-	max-width: 1400px;
+	max-width: 1700px;
 	margin: 0 auto;
 }
 
@@ -59,3 +58,5 @@ main {
         background-image: url(../images/header-image.png);
     }
 }
+
+// * {outline: 1px solid red;}
