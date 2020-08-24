@@ -413,7 +413,7 @@ header .wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  background: radial-gradient(closest-corner at 64% 28%, #f0f7f025 5%, #00000065 80%);
+  background: radial-gradient(closest-corner at 64% 28%, #64646425 3%, #00000065 80%);
   height: 98%;
   width: 100%;
 }
@@ -648,7 +648,7 @@ aside a:hover {
   width: 40px;
   height: 40px;
   z-index: 8;
-  background: transparent;
+  background: none;
   -webkit-transition: top 0.5s ease;
   transition: top 0.5s ease;
 }
@@ -1166,7 +1166,7 @@ aside a:hover {
 
 .section-contact .contact-card .wrapper {
   padding: 100px 0 100px 5%;
-  width: 70%;
+  width: 80%;
   height: 100%;
   position: relative;
 }
@@ -1350,6 +1350,13 @@ footer {
   font-weight: 300;
 }
 
+@media (max-width: 1000px) {
+  .section-contact .contact-card .wrapper {
+    width: 90%;
+    margin: 0 0 0 10%;
+  }
+}
+
 @media (max-width: 830px) {
   .section-about {
     font-size: calc(0.2rem + 2.3vw);
@@ -1388,9 +1395,8 @@ footer {
   .work-grid .info {
     font-size: 1rem;
   }
-  .section-contact .contact-card .wrapper {
+  .section-contact .contact-container {
     width: 60vw;
-    margin: 0 90vw 0 10vw;
   }
   .contact-form form input {
     width: 50%;
@@ -1534,14 +1540,37 @@ footer {
     font-size: 1.2rem;
   }
   .section-contact .contact-card {
-    padding: 60px 0;
-    text-align: center;
+    font-size: 1.5rem;
   }
-  .section-contact .contact-card .email-link:hover::before {
+  .section-contact .contact-card .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 95%;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  .section-contact .contact-card .wrapper .email-link:hover::before {
     display: none;
   }
-  .section-contact img {
+  .section-contact .contact-card img {
     opacity: 0.7;
+    height: 80%;
+    top: initial;
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -1555,8 +1584,15 @@ footer {
     font-size: 0.7rem;
     font-weight: normal;
   }
-  .section-contact .contact-card {
-    font-size: 1.5rem;
+  .section-contact .contact-card a {
+    margin-left: 8px;
+  }
+  .section-contact .contact-card .wrapper {
+    width: 100%;
+  }
+  .section-contact .contact-card .contact-container {
+    width: 80%;
+    margin: 0 auto;
   }
   footer a {
     width: 60%;

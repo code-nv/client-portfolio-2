@@ -1,3 +1,10 @@
+@media (max-width: 1000px) {
+	.section-contact .contact-card .wrapper {
+		width: 90%;
+		margin: 0 0 0 10%;
+	}
+}
+
 @media (max-width: 830px) {
 	.section-about {
 		font-size: calc(0.2rem + 2.3vw);
@@ -37,9 +44,8 @@
 			font-size: 1rem;
 		}
 	}
-	.section-contact .contact-card .wrapper {
+	.section-contact .contact-container {
 		width: 60vw;
-		margin: 0 90vw 0 10vw;
 	}
 	.contact-form form input {
 		width: 50%;
@@ -53,17 +59,14 @@
 	header {
 		margin: 0;
 		animation: email-load 3s ease;
-		// height: 50vh;
 		.wrapper {
-			// @include flex(column-reverse);
 			width: calc(100vw - 20px);
 			max-width: initial;
 			margin: 0;
 		}
 		.header-image-container,
 		.title-container {
-			width: 50%
-			// margin: 10px auto;
+			width: 50%;
 		}
 	}
 	.fixed-email {
@@ -134,7 +137,6 @@
 }
 
 @media (max-width: 474px) {
-
 	header {
 		.wrapper {
 			@include flex(column-reverse, center);
@@ -174,15 +176,26 @@
 	}
 	.section-contact {
 		.contact-card {
-			padding: 60px 0;
-			text-align: center;
+			font-size: 1.5rem;
+			.wrapper {
+				@include flex(row, center, center, nowrap);
+				width: 95%;
+				margin: 0 auto;
+				padding-left: 0;
 
-			.email-link:hover::before {
-				display: none;
+				.email-link:hover::before {
+					display: none;
+				}
 			}
-		}
-		img {
-			opacity: 0.7;
+			img {
+				opacity: 0.7;
+				height: 80%;
+				top: initial;
+				bottom: 0;
+				right: 0;
+				// right: 50%;
+				// transform: translateX(50%);
+			}
 		}
 	}
 }
@@ -197,9 +210,22 @@
 		font-size: 0.7rem;
 		font-weight: normal;
 	}
-	.section-contact .contact-card {
-		font-size: 1.5rem;
+
+	.section-contact {
+		.contact-card {
+			a {
+				margin-left: 8px;
+			}
+			.wrapper {
+				width: 100%;
+			}
+			.contact-container {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
 	}
+
 	footer a {
 		width: 60%;
 		max-width: 200px;
