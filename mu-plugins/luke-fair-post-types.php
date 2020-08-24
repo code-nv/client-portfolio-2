@@ -1,7 +1,6 @@
 <?php
 function luke_fair_post_types()
 {
-    // Location Post Type
     register_post_type('testimonial', array(
         'capability_type'=> 'testimonial',
         'public' => true,
