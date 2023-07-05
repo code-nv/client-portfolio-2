@@ -1,5 +1,5 @@
 <footer>
-    <a href="https://www.nickreyno.com" target="_blank" rel="noopener noreferrer">© 2020 Created by  Nick Reyno</a>
+    <a href="https://github.com/code-nv" target="_blank" rel="noopener noreferrer">© 2020 Created by Naomi Violet</a>
     <button class="hamburger-button">
                 <span class="span span-one"></span>
                 <span class="span span-two"></span>
